@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Steganography</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="steganography.min.js"></script>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav-header">
+        <div class="nav-title">Steganography</div>
+      </div>
+    </div>
+
+    <div class="encode">
+      <h2>Encode :</h2>
+      <div class="container">
+        <input
+          type="file"
+          name="pic"
+          accept="image/*"
+          onchange="readURL(this);"
+        />
+        <div class="">
+          <h5>Source Image</h5>
+          <img id="image1" src="" alt="" />
+        </div>
+
+        <div class="">
+          <input id="passkeyEncode" type="text" placeholder="Passkey" />
+        </div>
+
+        <div class="">
+          <input id="text" type="text" placeholder="Message" />
+        </div>
+
+        <button class="button" onclick="hideText()">Hide Message</button>
+      </div>
+
+      <img
+        class="upArrow"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAmVJREFUSEuFlr1rVFEQxX9TaSAIdqKIVhaCBv8AwUZQU6mFNlqJWIlgYqVuFsvFQgRF7LQQLCRFQBAsRLCySCdBERt7ISBIYsZ337sfcz/WfUWye9+9c+aec2ZmRQDt/4D/R3yqhfTK7RbUHaNxMgvhv9gDM8AssE2ukZBbitGqc8IulIsCZ1RYQDksoAo/gHXgLcIbVLYSBXWieboJ5SzCEx80UpFoiSx8A24A7y2B4bNYDcyGlS7T0cDv9Mec3QHuIDz0mSQNGsKOUe5X2k3JJIMXbqE8si4ZbpBWFoG1GYnnJsttuINyEvg0WNLpEUWWeUG/KuwrAYokxt3R0X+S2ACOAVshdNjrhHqakIPHo4uDUURhAixZKjIe4Dyw2gOYG64JLLaKLu2Jn9zRCagBib5x3DwHrpc3+Cmwv67Mhg1ScU3U36SooXWFEyXAb4G54gaDRlEnWzIxZEFXv/sXsLcE2BSYDwAmbN2jcg+POtiVQoNNYE8J4NQ/Uvg6dUIfVFAncoBY8oKXx76ocDQ00HDvV8Dl4CLbW2x2AgHACTzJrpeEeAlcLV10BXhR+7vRAgdhHffTnksIr/tCMxacA91AOFj2k5xyllvBTRqO6gXgT9IgvT0NvGumFUtfGwMqBnBN7xTw0ZqvnC53gQdta05jJALcBHnct/RQK02GlXudmGM/RU3Uxsga3v4FbnfeT520BWDz823jGcqBdqeOYG7gXBP40JofqVLrAnAru0EuCHpO4ThwyI/M78Bnr5dratsVeamdhJlsVrJ+kc/YpM20/fUENl1h9pC0P1XaP1tynf4BH/jpHJmGb0AAAAAASUVORK5CYII="
+      />
+
+      <div class="container">
+        <div class="">
+          <h5>Encoded Image</h5>
+          <img id="image2" src="" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="decode">
+      <h2>Decode :</h2>
+      <div class="container">
+        <input
+          type="file"
+          name="pic"
+          accept="image/*"
+          onchange="decode(this);"
+        />
+        <div class="">
+          <input id="passkeyDecode" type="text" placeholder="Passkey" />
+        </div>
+        <button class="button" onclick="displayText();">Let's see!</button>
+        <div class="">
+          <h4 id="decoded"></h4>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
